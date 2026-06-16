@@ -3,6 +3,7 @@
 import { signUp } from '@/lib/actions/auth'
 import Link from 'next/link'
 import { useState } from 'react'
+import OAuthButtons from '@/components/auth/OAuthButtons'
 
 export default function SignupPage() {
   const [error, setError] = useState('')
@@ -25,6 +26,14 @@ export default function SignupPage() {
         <div className="text-center mb-8">
           <Link href="/" className="font-bold text-2xl">LinkHub</Link>
           <p className="text-muted-foreground mt-2">Create your free page</p>
+        </div>
+
+        <OAuthButtons />
+
+        <div className="flex items-center gap-3 my-1">
+          <div className="flex-1 h-px bg-border" />
+          <span className="text-xs text-muted-foreground">or</span>
+          <div className="flex-1 h-px bg-border" />
         </div>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
